@@ -61,4 +61,7 @@ func main() {
 
     // waiting...
     <- done
+
+    inputFile.Close()
+    outputFile.Close()
 }
