@@ -4,6 +4,7 @@ import (
     "io"
     "os"
     "bufio"
+    "fmt"
 )
 
 func main() {
@@ -32,7 +33,7 @@ func main() {
 
         for record := range chRec {
             recCount += 1
-            record.Write(wr)
+            fmt.Fprintln(wr, record.String())
 
             if recCount % flushRate == 0 {
                 wr.Flush()
